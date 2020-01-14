@@ -64,7 +64,7 @@ int mod(int n, long long int p, int k)
     }
     else
     {
-        long long int acc = 1;
+        long long int acc = 1;  
         while (k != 1)
         {
             acc = acc * (myPowLong(p, k % 2) % n) % n;
@@ -196,64 +196,27 @@ struct list_node* primitive_roots_of(int n)
     }
 }
 
-int main(void)
+void Primitive_Root_Calculator(void)
 {
-    struct node n1 = { NULL, NULL, 5, 1 };
-    struct node n2 = { NULL, NULL, 7, 2 };
-    struct node n3 = { NULL, NULL, 8, 1 };
-    struct node n4 = { NULL, NULL, 1, 1 };
-    insertavl(5, &n2);
-    insertavl(8, &n2);
-    insertavl(30, &n2);
-    insertavl(31, &n2);
-    //int z = 1024;
-    //long long int x = 15000007003;
-    //long long int y = z;
-    //printf("%d \n", mod(10000, x, z));
+    print("Please enter the desired integer value:");
 
-    struct list_node* list1 = buildlist(1000);
-    struct list_node* list2 = buildlist(2000);
-    //printf("%d", find_primitive_root(1000291));
-    struct list_node* x = primitive_roots_of(1000409    );
-    print_list(x);
-    //printf("%d", phi(301489));
-    //printf("%d", mod(301489, 3, 301488));
+    int n;
 
-    //print_list(relative_primes(301489));
-    /*if (has_primitive_roots(1000409))
+    scanf_s("%d", &n);
+
+    struct list_node* PRoots = find_primtive_roots(n);
+
+    if (Proots == NULL)
     {
-        printf("true");
     }
     else
     {
-        printf("false");
-    } */
+        print_list(PRoots);
+    }
 }
-
-/*
 
 int main(void)
 {
-    struct node n1 = {NULL, NULL, 5, 1};
-    struct node n2 = {NULL, NULL, 7, 2};
-    struct node n3 = {NULL, NULL, 8, 1};
-    struct node n4 = {NULL, NULL, 1, 1};
-    insertavl(5, &n2);
-    insertavl(8, &n2);
-    insertavl(30, &n2);
-    insertavl(31, &n2);
-
-    print_list(Tree_to_List(insertavl(32, &n2)));
-
-    int* ptr;
-    ptr = (int*)calloc(1, sizeof(int));
-
-    ptr[1] = 1;
-    int p = 3;
-    int* ptr3 = &p;
-
-
-    int* facts = factors(12);
+    Primitive_Root_Calculator();
 }
- */
 
